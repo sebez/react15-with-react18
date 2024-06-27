@@ -18,38 +18,46 @@ const MyComponent = React.createClass({
   mixins: [MyMixin],
 
   getInitialState() {
-      return {
-          message: 'Hello, World!'
-      };
+    return {
+      message: 'Hello, World!'
+    };
   },
 
   handleClick() {
-      this.setState({
-          message: 'You clicked the button!'
-      });
-      this.sayHello();
+    this.setState({
+      message: 'You clicked the button!'
+    });
+    this.sayHello();
+    this.refs.inputFirstName.focus();
   },
 
   render() {
-      return (
-          <div>
-              <TitleComponent title={this.state.message}/>
-              <button onClick={this.handleClick}>Click Me</button>
-          </div>
-      );
+    return (
+      <div>
+        <div>
+          <TitleComponent title={this.state.message} />
+          <button onClick={this.handleClick}>Click Me</button>
+        </div>
+        <div>
+          <input name="firstname" ref='inputFirstName' placeholder="Diego" />
+          <input name="familyName" placeholder="Delavega" />
+        </div>
+      </div>
+
+    );
   }
 });
 
 const TitleComponent = React.createClass({
 
   propTypes: {
-      title: React.PropTypes.number.isRequired,
+    title: React.PropTypes.number.isRequired,
   },
 
   render() {
-      return (
-          <h1>TITRE : {this.props.title}</h1>
-      );
+    return (
+      <h1>TITRE : {this.props.title}</h1>
+    );
   }
 });
 

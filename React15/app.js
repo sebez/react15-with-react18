@@ -23,14 +23,22 @@ const MyComponent = React.createClass({
             message: 'You clicked the button!'
         });
         this.sayHello();
+        this.refs.inputFirstName.focus();
     },
 
     render() {
         return (
             <div>
-                <TitleComponent title={this.state.message}/>
-                <button onClick={this.handleClick}>Click Me</button>
+                <div>
+                    <TitleComponent title={this.state.message} />
+                    <button onClick={this.handleClick}>Click Me</button>
+                </div>
+                <div>
+                    <input name="firstname" ref='inputFirstName' placeholder="Diego" />
+                    <input name="familyName"  placeholder="Delavega" />
+                </div>
             </div>
+
         );
     }
 });
