@@ -1,8 +1,17 @@
 
+/************************************************** */
+/** [Hack à faire une fois globalement]             */
+/************************************************** */
+
 /* Redéfini createClass sur le React 18 */
 React.createClass = createReactClass;
 
+/* Redéfini PropTypes sur le React 18 */
 React.PropTypes = PropTypes;
+
+/************************************************** */
+/** [/Hack à faire une fois globalement]             */
+/************************************************** */
 
 // Define a simple mixin
 const MyMixin = {
