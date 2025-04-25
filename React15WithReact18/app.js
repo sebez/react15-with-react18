@@ -23,40 +23,42 @@ const MyMixin = {
   }
 };
 
+// Create a React component that uses the mixin
 const MyComponent = React.createClass({
   mixins: [MyMixin],
 
   getInitialState() {
-    return {
-      message: 'Hello, World!'
-    };
+      return {
+          message: 'Hello, World!'
+      };
   },
 
   handleClick() {
-    this.setState({
-      message: 'You clicked the button!'
-    });
-    this.sayHello();
-    this.refs.inputFirstName.focus();
+      this.setState({
+          message: 'You clicked the button!'
+      });
+      this.sayHello();
+      this.refs.inputFirstName.focus();
+      var node = ReactDOM.findDOMNode(this.refs.inputFirstName);
+      console.log(node.classList);
   },
 
   render() {
-    return (
-      <div>
-        <div>
-          <TitleComponent title={this.state.message} />
-          <button onClick={this.handleClick}>Click Me</button>
-        </div>
-        <div>
-          <input name="firstname" ref='inputFirstName' placeholder="Diego" />
-          <input name="familyName" placeholder="Delavega" />
-        </div>
-      </div>
+      return (
+          <div>
+              <div>
+                  <TitleComponent title={this.state.message} />
+                  <button onClick={this.handleClick}>Click Me</button>
+              </div>
+              <div>
+                  <input name="firstname" ref='inputFirstName' placeholder="Diego" className="flashy groovy" />
+                  <input name="familyName"  placeholder="Delavega" />
+              </div>
+          </div>
 
-    );
+      );
   }
 });
-
 const TitleComponent = React.createClass({
 
   propTypes: {
@@ -72,3 +74,4 @@ const TitleComponent = React.createClass({
 
 const root = ReactDOM.createRoot(document.getElementById('app'));
 root.render(<MyComponent />);
+

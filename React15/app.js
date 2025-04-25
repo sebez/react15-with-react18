@@ -24,6 +24,8 @@ const MyComponent = React.createClass({
         });
         this.sayHello();
         this.refs.inputFirstName.focus();
+        var node = ReactDOM.findDOMNode(this.refs.inputFirstName);
+        console.log(node.classList);
     },
 
     render() {
@@ -34,7 +36,7 @@ const MyComponent = React.createClass({
                     <button onClick={this.handleClick}>Click Me</button>
                 </div>
                 <div>
-                    <input name="firstname" ref='inputFirstName' placeholder="Diego" />
+                    <input name="firstname" ref='inputFirstName' placeholder="Diego" className="flashy groovy" />
                     <input name="familyName"  placeholder="Delavega" />
                 </div>
             </div>
