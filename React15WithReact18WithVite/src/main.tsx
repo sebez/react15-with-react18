@@ -1,8 +1,6 @@
-import React from 'react'
+import React from './react15'
 import ReactDOM from 'react-dom'
 import ReactDOMClient from 'react-dom/client'
-import PropTypes from 'prop-types';
-import createClass from 'create-react-class';
 
 // Define a simple mixin
 const MyMixin = {
@@ -15,7 +13,7 @@ const MyMixin = {
 };
 
 // Create a React component that uses the mixin
-const MyComponent = createClass({
+const MyComponent = React.createClass({
     mixins: [MyMixin],
 
     getInitialState() {
@@ -51,10 +49,10 @@ const MyComponent = createClass({
     }
 });
 
-const TitleComponent = createClass({
+const TitleComponent = React.createClass({
 
     propTypes: {
-        title: PropTypes.string.isRequired,
+        title: React.PropTypes.string.isRequired,
     },
 
     render() {
