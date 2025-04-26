@@ -1,10 +1,7 @@
+import './hackReact';
 import React from 'react'
 import ReactDOM from 'react-dom'
 import ReactDOMClient from 'react-dom/client'
-import PropTypesLegacy from 'prop-types';
-import createReactClass from 'create-react-class';
-React.PropTypes = PropTypesLegacy;
-React.createClass = createReactClass;
 
 // Define a simple mixin
 const MyMixin = {
