@@ -2,7 +2,6 @@ import react from '@vitejs/plugin-react';
 import nesting from 'postcss-nesting';
 import { defineConfig } from 'vite';
 import checker from 'vite-plugin-checker';
-import path from 'path';
 import commonjs from 'vite-plugin-commonjs';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
